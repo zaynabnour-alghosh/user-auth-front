@@ -1,15 +1,8 @@
 const pages={}
 pages.base_url="http://localhost/user-auth-back/";
-// pages.get_api=(url)=>{
-//     fetch(url)
-//     .then((response)=>{
-//         console.log(response);
-//     })
-//     .catch((error)=>console.log("Error from api:", error))    
-// }
 pages.page_register=() => {
     console.log("register working..")
-    document.getElementById("authform").addEventListener('submit', createUser);
+    document.getElementById("btnRegister").addEventListener('submit',createUser);
     function createUser(e){
         e.preventDefault()
         const first_name=document.getElementById('first_name').value;
@@ -21,9 +14,8 @@ pages.page_register=() => {
             last_name,
             email,
             password
-        }
-        const register_url = pages.base_url + "register.php"
-        fetch(register_url,{
+        };        
+        fetch("http://localhost/user-auth-back/register.php",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -31,18 +23,23 @@ pages.page_register=() => {
             body:JSON.stringify(newUser)
         })
         .then(response=>response.json())
-        .then(newUser=>{
-            console.log(newUser)
+        .then(data=>{
+            if(data.status=='success'){
+                console.log("user created successfully!");
+            }
+            else{
+                console.log("email is already taken choose another email");
+            }
         })
-        .catch(error=>console.log(error))
+        .catch(error=>{console.log(error);});
         
     }
-};
-pages.page_login=()=>{
-    console.log("login working..")
-    document.addEventListener("DOMContentLoaded", getCredentials);
-    function getCredentials(e){
-        e.preventDefault()
-    }
-};
+}
+pages.page_register=() => {
+
+
+
+    
+}
+
 
