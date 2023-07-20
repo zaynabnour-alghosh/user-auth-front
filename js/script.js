@@ -27,15 +27,13 @@ pages.page_register=() => {
             body:JSON.stringify(newUser),
             headers:{
                 "Content-Type":"application/json"
-            }}).
-            then(response=>response.json())
+            }})
+            .then(response=>response.json())
             .then(data=>{
-            if(data.status!='success'){
+            if(data.status=='success'){
                 console.log("user created successfully!");
             }
-            else{
-                console.log("email is already taken choose another email");
-            }
+           
         });
     
         
