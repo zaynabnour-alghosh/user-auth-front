@@ -37,30 +37,20 @@
                                 <div class="container">
                                     <div class="row  justify-content-between">                                        
                                         <div class="col">
-                                            <input type="text" placeholder="First name" class="form-control form-control-lg mt-2">
+                                            <input type="text"  id="first_name" placeholder="First name" class="form-control form-control-lg mt-2">
                                         </div>
                                         <div class="col">
-                                            <input type="text" placeholder="Last name" class="form-control form-control-lg mt-2">
+                                            <input type="text" id="last_name"  placeholder="Last name" class="form-control form-control-lg mt-2">
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <input type="email" placeholder="Email" class="form-control form-control-lg mt-2 ms-auto">
+                                        <input type="email" id="email"  placeholder="Email" class="form-control form-control-lg mt-2 ms-auto">
                                     </div>
                                     <div class="row">
-                                        <input type="password" placeholder="Password" class="form-control form-control-lg mt-2 ms-auto">
+                                        <input type="password" id="password"  placeholder="Password" class="form-control form-control-lg mt-2 ms-auto">
                                     </div>
-                                    <div class="row">
-                                        <input type="password" placeholder="Confirm Password" class="form-control form-control-lg mt-2 ms-auto">
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-check mt-3">
-                                            <input class="form-check-input" type="checkbox" value="" id="agreement">
-                                            <label class="form-check-label" for="agreement">
-                                              I agree to the terms and conditions.
-                                            </label>
-                                        </div>
                                     <div class="text-center">
-                                        <button class="btn btn-primary align-items-center mt-3">SIGN UP</button>
+                                        <button class="btn btn-primary align-items-center mt-3" type="submit">SIGN UP</button>
                                     </div>
                                 </div>
                             </div>
@@ -70,5 +60,7 @@
             </div>  
         </div>
     </div>
+    <script src="js/script.js"></script>
+    <script>pages.page_register()</script>
 </body>
 </html>
